@@ -18,11 +18,14 @@ The VGG architecture comprises 16 layers (VGG-16) and 19 layers (VGG-19). This q
 
 The key design tenets of the VGG network are outlined below: 
 
-Each convolutional layer employs a kernel size of 3x3 and utilizes zero padding to ensure that the output maintains the same height and width as the input. The stride is configured to one.
+* Each convolutional layer employs a kernel size of 3x3 and utilizes zero padding to ensure that the output maintains the same height and width as the input.
+* The stride is configured to one.
 * Convolutional layers are arranged in stages, with each level succeeded by a pooling layer.
 * All convolutional layers employ the ReLU activation function.
 * All max pooling layers utilize a pooling size of 2 and a stride of 2.
-* Subsequent to the pooling layer, the ensuing convolutional step featured double the amount of filters compared to the preceding stages. If the initial convolutional layer comprises 64 filters, the subsequent layer will consist of 128 filters. This design concept is still extensively utilized today in the development of convolutional neural networks. The initial convolutional stage comprises 64 filters, the second stage contains 128 filters, the fourth stage includes 256 filters, and the fifth stage consists of 512 filters. 
+* Subsequent to the pooling layer, the ensuing convolutional step featured double the amount of filters compared to the preceding stages. If the initial convolutional layer comprises 64 filters, the subsequent layer will consist of 128 filters.
+* This design concept is still extensively utilized today in the development of convolutional neural networks.
+* The initial convolutional stage comprises 64 filters, the second stage contains 128 filters, the fourth stage includes 256 filters, and the fifth stage consists of 512 filters. 
 
 The convolutional layers in VGG-16 are structured as follows:    
 
@@ -36,7 +39,7 @@ In VGG-19, the 4th and 5th stages have 4 convolutional layers.
 
 Same as AlexNet, VGG has also 3 fully connected layers with exact same configurations: 4096 units in first two fully connected layers, 
 and 1000 units in last connected layers. The last layer has a softmax activation function for classification purpose.
-*Image: AlexNet and VGG-16 & VGG-19 architectures. Image captured from CS231n.*
+*Image: AlexNet and VGG-16 & VGG-19 architectures*
 ![VGG](../images/VGG.jpg)
 
 Justin Johnson has also a great side by side comparison of AlexNet and VGG in his Deep Learning for Computer Vision course.
