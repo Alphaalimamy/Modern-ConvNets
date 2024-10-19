@@ -39,7 +39,8 @@ In VGG-19, the 4th and 5th stages have 4 convolutional layers.
 Same as AlexNet, VGG has also 3 fully connected layers with exact same configurations: 4096 units in first two fully connected layers, 
 and 1000 units in last connected layers. The last layer has a softmax activation function for classification purpose.
 *Image: AlexNet and VGG-16 & VGG-19 architectures. Image captured from CS231n.*
-[]("./images/VGG.jpg)
+![VGG](./images/VGG.jpg)
+
 Justin Johnson has also a great side by side comparison of AlexNet and VGG in his Deep Learning for Computer Vision course.
 <a name='3'></a>
 
