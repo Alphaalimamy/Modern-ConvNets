@@ -62,13 +62,13 @@ pip install torch torchvision
 
 ### Step 1: Import Necessary Libraries
 First, we need to import the required libraries, including PyTorch and torchvision:
-```pyton
+```python
 import torch
 import torchvision
 import torch.nn as nn
 import torch.optim as optim
-import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
+import torchvision.transforms as transforms
 ```
 
 
@@ -158,11 +158,6 @@ Output shape: torch.Size([1, 1000])
 Now, we need to load the CIFAR-10 dataset and apply necessary transformations. We'll resize the images to 224x224 (the input size for VGG16) and normalize them:
 
 ```python
-import torch
-import torchvision
-import torchvision.transforms as transforms
-from torch.utils.data import DataLoader
-
 def load_cifar10_dataset(batch_size=32):
     # Define data transformations
     transform = transforms.Compose([
