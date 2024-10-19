@@ -7,26 +7,24 @@
 * [4. Final Notes](#4)
 <a name='1'></a>
 ## 1. Introduction
-AlexNet was the results of lots of trials and errors. As a consequence, it lacked some design principles. But despite that, the idea of stacking layers after layers inspired
-the next generation of convolutional neural network architectures. 
+AlexNet was the product of extensive experimentation and refinement. Consequently, it was deficient in certain design principles. Nonetheless, the concept of stacking several layers inspired the subsequent construction of convolutional neural network architectures. 
 
-[VGG](https://arxiv.org/pdf/1409.1556.pdf) network won the ImageNet competition of 2014 in classification and localization tasks. VGG introduced new principles for 
-designing ConvNets (some of which are still norms to day), and it was deeper than AlexNet. Such trend proved that deep networks always perform better than shallow networks.
+The VGG network won in the 2014 ImageNet competition for classification and localization tasks. VGG established new ideas for the design of ConvNets, many of which remain standard today, and it possessed greater depth than AlexNet. This pattern demonstrated that deep networks consistently outperform shallow networks.
 
 <a name='2'></a>
 
 ## 2. VGG Architecture
-In total, [VGG](https://arxiv.org/pdf/1409.1556.pdf) architecture has 16 layers(VGG-16) and 19 layers(VGG-19). That's two times the number of layers of AlexNet.
+The VGG architecture comprises 16 layers (VGG-16) and 19 layers (VGG-19). This quantity is double the number of layers in AlexNet.
 
-Below are the main design principles of VGG network: 
+The key design tenets of the VGG network are outlined below: 
 
-* Every single convolutional layer has a kernel size of 3X3 and it used zero padding so that the output has the same height and width as the input. The stride is also set to 1.
-* Convolutional layers are stacked in stages, each stage followed by a pooling layer.
-* All convolutional layers use ReLU activation function.
-* All maxpooling layers have a pooling size of 2 and stride of 2. 
-* After the pooling layer, the next convolutional stage had double the number of filters from the previous stages. So if the first convolutional stage was 64, the next will be 128. This design idea is still used alot to day in designing convolutional neural networks. To be specific here, the first convolutional stage has 64 filters, second 128, fourth 256, fifth 512 filters. 
+Each convolutional layer employs a kernel size of 3x3 and utilizes zero padding to ensure that the output maintains the same height and width as the input. The stride is configured to one.
+* Convolutional layers are arranged in stages, with each level succeeded by a pooling layer.
+* All convolutional layers employ the ReLU activation function.
+* All max pooling layers utilize a pooling size of 2 and a stride of 2.
+* Subsequent to the pooling layer, the ensuing convolutional step featured double the amount of filters compared to the preceding stages. If the initial convolutional layer comprises 64 filters, the subsequent layer will consist of 128 filters. This design concept is still extensively utilized today in the development of convolutional neural networks. The initial convolutional stage comprises 64 filters, the second stage contains 128 filters, the fourth stage includes 256 filters, and the fifth stage consists of 512 filters. 
 
-The convolutional stages in VGG-16 are organized as follows:    
+The convolutional layers in VGG-16 are structured as follows:    
 
 * Stage 1: conv - conv - pool
 * Stage 2: conv - conv - pool
@@ -124,10 +122,8 @@ class VGG16(nn.Module):
 # Instantiate the model
 vgg_16 = VGG16(num_classes=1000)
 ```
-The VGG-16 network trained on Imagenet dataset has over 138 millions parameters. That's a pretty big network.
-<a name='4'></a>
+The VGG-16 network, trained on the ImageNet dataset, contains about 138 million parameters. The network is quite extensive.
+<a name="4"></a>
 
-## 4. Final Notes
-VGG network is one of the first ConvNets architectures that introduced some design principles in designing visual recognition architectures 
-but it has lots of parameters which is not a computational efficient. The next architectures that we will cover such as GoogLeNet addressed the 
-challenge of designing efficient architectures that can also run in mobile devices.
+## 4. Concluding Remarks
+The VGG network is among the pioneering architectures of ConvNets that established architectural principles for visual recognition systems; yet, it possesses a substantial number of parameters, rendering it computationally inefficient. The subsequent architectures we shall examine, including GoogLeNet, tackled the difficulty of creating efficient designs suitable for mobile devices.
